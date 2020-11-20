@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textViewCad"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="395dp"
+        android:layout_marginBottom="675dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCadastro"
+        android:layout_width="171dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="188dp"
+        android:text="@string/cadastro"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edTelaCadastroEmail"
+        android:layout_width="343dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="17dp"
+        android:ems="10"
+        android:hint="@string/e_mail"
+        android:background="@drawable/border"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/edTelaCadastroNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCadastro" />
+
+    <EditText
+        android:id="@+id/edTelaCadastroNome"
+        android:layout_width="343dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/nome"
+        android:background="@drawable/border"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTelaCadastroEmail" />
+
+    <EditText
+        android:id="@+id/edTelaCadastroSenha"
+        android:layout_width="343dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/senha"
+        android:background="@drawable/border"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTelaCadastroNome" />
+
+    <EditText
+        android:id="@+id/edTelaCadastroConfirmacao"
+        android:layout_width="343dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="@string/confirmacao"
+        android:background="@drawable/border"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnSalvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTelaCadastroSenha" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="343dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_rounded_corners_black"
+        android:text="@string/salvar"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edTelaCadastroConfirmacao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
