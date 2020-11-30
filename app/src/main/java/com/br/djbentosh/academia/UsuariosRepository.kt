@@ -88,14 +88,14 @@ object UsuariosRepository {
     }
 
     fun getCadastraUsuario(
-        onSuccess: (usuario: GetCadastro) -> Unit,
+        onSuccess: (usuario: GetCadastroReturn) -> Unit,
         onError: () -> Unit
     ) {
         api.getCadastraUsuario()
-            .enqueue(object : Callback<GetCadastro> {
+            .enqueue(object : Callback<GetCadastroReturn> {
                 override fun onResponse(
-                    call: Call<GetCadastro>,
-                    response: Response<GetCadastro>
+                    call: Call<GetCadastroReturn>,
+                    response: Response<GetCadastroReturn>
                 ) {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
@@ -110,7 +110,36 @@ object UsuariosRepository {
                     }
                 }
 
-                override fun onFailure(call: Call<GetCadastro>, t: Throwable) {
+                override fun onFailure(call: Call<GetCadastroReturn>, t: Throwable) {
+                    onError.invoke()
+                }
+            })
+    }
+
+    fun getNewCadastro(
+        onSuccess: (usuario: GetNewChamada) -> Unit,
+        onError: () -> Unit
+    ) {
+        api.getNewCadastro()
+            .enqueue(object : Callback<GetNewChamada> {
+                override fun onResponse(
+                    call: Call<GetNewChamada>,
+                    response: Response<GetNewChamada>
+                ) {
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+
+                        if (responseBody != null) {
+                            onSuccess.invoke(responseBody)
+                        } else {
+                            onError.invoke()
+                        }
+                    } else {
+                        onError.invoke()
+                    }
+                }
+
+                override fun onFailure(call: Call<GetNewChamada>, t: Throwable) {
                     onError.invoke()
                 }
             })

@@ -13,9 +13,13 @@ data class GetLogin(
     @SerializedName("pass") val pass: String
 )
 
-data class GetCadastro(
+data class GetCadastroReturn(
+    @SerializedName("ok") val ok:Boolean
+)
+
+data class GetNewChamada(
     @SerializedName("user") val user: String,
-    @SerializedName("name") val name: String,
-    @SerializedName("pass") val pass: String
+    @SerializedName("nome") val nome: String,
+    @SerializedName("telefone") val telefone: String
 
 )

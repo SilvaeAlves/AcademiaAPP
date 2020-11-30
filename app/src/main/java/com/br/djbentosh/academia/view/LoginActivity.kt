@@ -1,12 +1,13 @@
 package com.br.djbentosh.academia.view
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
-import androidx.core.net.toUri
+import com.br.djbentosh.academia.GetLogin
 import com.br.djbentosh.academia.R
+import com.br.djbentosh.academia.UsuariosRepository
 import kotlinx.android.synthetic.main.tela_login.*
+import kotlinx.android.synthetic.main.tela_usuario.*
 
 class LoginActivity : BaseActivity() {
 
@@ -16,8 +17,11 @@ class LoginActivity : BaseActivity() {
 
         btnLogin.setOnClickListener {
             capturaDados()
-            }
         }
+        btnVoltar.setOnClickListener{
+            finish()
+        }
+    }
 
     private fun receberUsuarios (){
         val intent = Intent(this, ListarUsuariosActivity::class.java)
@@ -41,8 +45,25 @@ class LoginActivity : BaseActivity() {
                 edTelaLoginSenha.text.toString()
             )
 */
-            receberUsuarios()
+            getLoginUsuarios()
         }
+    }
+
+    private fun getLoginUsuarios() = UsuariosRepository.getLoginAutentica(
+        ::onLoginFetched,
+        ::onError
+    )
+
+    private fun onLoginFetched(usuario: GetLogin) {
+        if (edTelaLoginEmail == email1 && edTelaLoginSenha == senha1){
+            receberUsuarios()
+        }else{
+            Toast.makeText(this, "Falha ao efetuar Login!", Toast.LENGTH_LONG).show()
+        }
+    }
+
+    private fun onError(){
+        Toast.makeText(this, "Por favor verifique sua conexão de internet", Toast.LENGTH_LONG).show()
     }
 }
 

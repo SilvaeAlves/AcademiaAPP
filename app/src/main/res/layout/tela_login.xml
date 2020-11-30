@@ -5,15 +5,13 @@
     android:layout_height="match_parent"
     android:scrollbarSize="36dp">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="395dp"
-        android:layout_marginBottom="675dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnVoltar"
+        android:layout_width="25dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_back_button"
+        app:layout_constraintBottom_toTopOf="@+id/txtLogin"
+        app:layout_constraintStart_toStartOf="@+id/txtLogin"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -25,7 +23,7 @@
         android:layout_marginTop="104dp"
         android:layout_marginEnd="254dp"
         android:text="@string/login"
-        android:textSize="36sp"
+        android:textSize="33sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

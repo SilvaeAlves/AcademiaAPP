@@ -11,13 +11,9 @@ import kotlinx.android.synthetic.main.tela_usuario_list_view.*
 
 class ListarUsuariosActivity: BaseActivity () {
 
-    private lateinit var listView: ListView
-    private lateinit var listaUsuariosAdapter: UsuariosAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tela_usuario_list_view)
-
         getListaUsuarios()
     }
 
@@ -27,7 +23,6 @@ class ListarUsuariosActivity: BaseActivity () {
     )
 
     private fun onListUsuariosFetched(usuario: List<GetUsuarioResponse>) {
-  //      listaUsuariosAdapter.updateusuarios(usuario)
         val adapter = UsuariosAdapter (this, usuario)
 
         lista.adapter = adapter

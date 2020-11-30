@@ -18,5 +18,11 @@ interface UsuarioApi {
     @GET("ee28dc0d-1fc4-460a-af49-5c039300a325")
     fun getCadastraUsuario(
 
-    ): Call<GetCadastro>
+    ): Call<GetCadastroReturn>
+
+    @GET("253f11f8-7ae5-4d4f-8607-395e56bdf024")
+    fun getNewCadastro(
+
+    ): Call<GetNewChamada>
+
 }
