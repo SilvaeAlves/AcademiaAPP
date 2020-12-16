@@ -4,7 +4,8 @@ class Usuarios(
     val nomeCompleto: Int,
     val email: Int,
     val senha: Int,
-    val imagem: Int) {
+    val imagem: Int
+) {
 
     init {
         this.nomeCompleto

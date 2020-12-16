@@ -1,6 +1,7 @@
 package com.br.djbentosh.academia.view
 
 import android.app.ProgressDialog
+import android.content.pm.ActivityInfo
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -22,7 +23,7 @@ open class BaseActivity : AppCompatActivity() {
         progressDialog.setCancelable(false)
         progressDialog.show()
 
-        Handler().postDelayed({progressDialog.dismiss()}, 2000)
+        Handler().postDelayed({ progressDialog.dismiss() }, 2000)
 
         // deixar visualização da tela em full screen
 
@@ -35,5 +36,7 @@ open class BaseActivity : AppCompatActivity() {
             )
         }
 
+        // bloquear rotação de tela
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
     }
 }

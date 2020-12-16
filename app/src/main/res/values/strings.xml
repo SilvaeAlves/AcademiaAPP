@@ -11,4 +11,13 @@
     <string name="todo">TODO</string>
     <string name="cadastre_se">cadastre-se</string>
     <string name="login_tela_login">Login</string>
+    <string name="usuario_tb">Usuário</string>
+    <string name="usuario">Usuário</string>
+    <string name="novo_cadastro">Novo Cadastro</string>
+    <string name="Telefone">Telefone</string>
+    <string name="email_usuario">Email Usuário</string>
+    <string name="senha_usuario">Senha Usuário</string>
+    <string name="abrir_dialogo">Abrir_Diálogo</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
 </resources>

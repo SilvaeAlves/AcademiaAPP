@@ -14,7 +14,7 @@ object UsuariosRepository {
 
     init {
         val interceptor = HttpLoggingInterceptor()
-        interceptor.level=HttpLoggingInterceptor.Level.BODY
+        interceptor.level = HttpLoggingInterceptor.Level.BODY
 
         val client = OkHttpClient.Builder()
         client.addInterceptor(interceptor)
@@ -116,15 +116,15 @@ object UsuariosRepository {
             })
     }
 
-    fun getNewCadastro(
-        onSuccess: (usuario: GetNewChamada) -> Unit,
+    fun getNovoCadastro(
+        onSuccess: (usuario: GetNovoCadastro) -> Unit,
         onError: () -> Unit
     ) {
-        api.getNewCadastro()
-            .enqueue(object : Callback<GetNewChamada> {
+        api.getNovoCadastro()
+            .enqueue(object : Callback<GetNovoCadastro> {
                 override fun onResponse(
-                    call: Call<GetNewChamada>,
-                    response: Response<GetNewChamada>
+                    call: Call<GetNovoCadastro>,
+                    response: Response<GetNovoCadastro>
                 ) {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
@@ -139,11 +139,9 @@ object UsuariosRepository {
                     }
                 }
 
-                override fun onFailure(call: Call<GetNewChamada>, t: Throwable) {
+                override fun onFailure(call: Call<GetNovoCadastro>, t: Throwable) {
                     onError.invoke()
                 }
             })
     }
-
-
 }

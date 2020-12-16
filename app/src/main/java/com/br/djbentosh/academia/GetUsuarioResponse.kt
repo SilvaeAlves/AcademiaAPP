@@ -4,8 +4,10 @@ import com.google.gson.annotations.SerializedName
 
 data class GetUsuarioResponse(
     @SerializedName("id") val id: String,
+    @SerializedName("title") val title: String,
     @SerializedName("name") val name: String,
-    @SerializedName("location") val location: String
+    @SerializedName("location") val location: String,
+    @SerializedName("image") val image: String
 )
 
 data class GetLogin(
@@ -14,12 +16,18 @@ data class GetLogin(
 )
 
 data class GetCadastroReturn(
-    @SerializedName("ok") val ok:Boolean
+    @SerializedName("ok") val ok: Boolean
 )
 
-data class GetNewChamada(
+data class GetNovoCadastroReturn(
+    @SerializedName("ok") val ok: Boolean
+)
+
+
+
+data class GetNovoCadastro(
     @SerializedName("user") val user: String,
-    @SerializedName("nome") val nome: String,
+    @SerializedName("pass") val pass: String,
     @SerializedName("telefone") val telefone: String
 
 )
