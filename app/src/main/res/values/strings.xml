@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Academia</string>
-    <string name="senha">Senha</string>
-    <string name="e_mail">E-mail</string>
+    <string name="name">Senha</string>
+    <string name="id">E-mail</string>
     <string name="nome">Nome</string>
     <string name="cadastro">Cadastro</string>
     <string name="confirmacao">Confirmação</string>
@@ -15,9 +15,35 @@
     <string name="usuario">Usuário</string>
     <string name="novo_cadastro">Novo Cadastro</string>
     <string name="Telefone">Telefone</string>
+
+
     <string name="email_usuario">Email Usuário</string>
     <string name="senha_usuario">Senha Usuário</string>
     <string name="abrir_dialogo">Abrir_Diálogo</string>
+
+
     <string name="Username">Username</string>
-    <string name="Password">Password</string>
+    <string name="Senha">Password</string>
+    <string name="title">Nome Completo</string>
+    <string name="location">Confirmação de Senha</string>
+
+
+    <string name="senha_add">Senha</string>
+    <string name="e_mail_add">E-mail</string>
+
+    <!-- Splash -->
+    <string name="loading">Loading…</string>
+
+    <!-- AlertDialog -->
+    <string name="id_name">id (name)</string>
+    <string name="title_designation">title (designation)</string>
+    <string name="name_last_name">name (last name)</string>
+    <string name="location_location">location</string>
+
+    <!-- mensagens adição de novos usuários -->
+    <string name="O_Usuario_foi_cadastrado_com_sucesso">Usuario cadastrado com Sucesso</string>
+    <string name="Existe_um_erro_ao_cadastrar_um_novo_usuario">Erro ao cadastrar novo Usuario</string>
+    <string name="remover">Remover</string>
+    <string name="alterar">Alterar</string>
+
 </resources>

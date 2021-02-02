@@ -12,6 +12,8 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.tela_inicial_main)
 
 
+
+
         btnLoginTelaInicial.setOnClickListener {
             val intent = Intent(applicationContext, LoginActivity::class.java)
             startActivity(intent)

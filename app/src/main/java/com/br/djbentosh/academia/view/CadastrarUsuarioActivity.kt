@@ -41,19 +41,19 @@ class CadastrarUsuarioActivity : BaseActivity() {
 
         if (email == "") {
             validarcad = false
-            edTelaCadastroEmail.error = "Erro! E-mail não preenchido, por favor verifique!"
+            edTelaCadastroEmail.error = "Campo de  E-mail não preenchido, por favor preencher!"
         }
         if (nome == "") {
             validarcad = false
-            edTelaCadastroNome.error = "Erro! Nome não preenchido, por favor verifique!"
+            edTelaCadastroNome.error = "Caompo do Nome não preenchido, por favor preencher!"
         }
         if (senha == "") {
             validarcad = false
-            edTelaCadastroSenha.error = "Erro! Senha não preenchida, por favor verifique!"
+            edTelaCadastroSenha.error = "Campo da Senha não preenchida, por favor preencher!"
         }
         if (confimsenha == "") {
             validarcad = false
-            edTelaCadastroConfirmacao.error = "Erro! A senha não confere, por favor verifique!"
+            edTelaCadastroConfirmacao.error = "Campo confirmação da senha não prenchido ou confere, por favor verifique!"
         }
         if (validarcad) {
             getCadastroUsuarios()

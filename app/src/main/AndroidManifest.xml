@@ -12,17 +12,22 @@
         android:screenOrientation="userPortrait"
         android:roundIcon="@mipmap/acad_laucher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="ExtraText">
+        android:theme="@style/AppTheme">
+        <activity android:name=".view.SplashActivity"
+            android:theme="@style/splash">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+        </activity>
         <activity android:name=".view.ListarUsuariosActivity"/>
         <activity android:name=".view.CadastrarUsuarioActivity"/>
         <activity android:name=".view.LoginActivity"/>
         <activity android:name=".view.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

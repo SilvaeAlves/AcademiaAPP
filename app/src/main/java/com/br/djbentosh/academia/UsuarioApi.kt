@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface UsuarioApi {
 
-    @GET("e37ad954-1449-4d7c-9fbc-ede611359ff9")
+    @GET("62073e3d-1849-42d3-819f-b20d4a668498")
     fun getListaUsuarios(
 
     ): Call<List<GetUsuarioResponse>>
@@ -20,7 +20,7 @@ interface UsuarioApi {
 
     ): Call<GetCadastroReturn>
 
-    @GET("253f11f8-7ae5-4d4f-8607-395e56bdf024")
+    @GET("14d89a7f-c35e-40f2-83bb-8345c8c7a119")
     fun getNovoCadastro(
 
     ): Call<GetNovoCadastro>

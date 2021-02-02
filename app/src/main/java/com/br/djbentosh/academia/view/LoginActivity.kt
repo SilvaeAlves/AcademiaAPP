@@ -35,11 +35,11 @@ class LoginActivity : BaseActivity() {
 
         if (email == "") {
             validarlog = false
-            edTelaLoginEmail.error = "Erro! E-mail não preenchido, por favor verifique!"
+            edTelaLoginEmail.error = "Campo do E-mail não preenchido, por favor preencher!"
         }
         if (senha == "") {
             validarlog = false
-            edTelaLoginSenha.error = "Erro! Senha não preenchida, por favor verifique!"
+            edTelaLoginSenha.error = "Campo da  Senha não preenchida, por favor preencher!"
         }
         if (validarlog) {
             getLoginUsuarios()
@@ -48,14 +48,17 @@ class LoginActivity : BaseActivity() {
 
     }
 
-    private fun getLoginUsuarios() = UsuariosRepository.getLoginAutentica(
-        ::onLoginFetched,
-        ::onError
-    )
+    private fun getLoginUsuarios() {
+        UsuariosRepository.getLoginAutentica(
+            ::onLoginFetched,
+            ::onError
+        )
+    }
 
     private fun onLoginFetched(usuario: GetLogin) {
 
-        if (edTelaLoginEmail.text.toString() == usuario.user && edTelaLoginSenha.text.toString() == usuario.pass) {
+        if (edTelaLoginEmail.text.toString() == usuario.user &&
+            edTelaLoginSenha.text.toString() == usuario.pass) {
             receberUsuarios()
         } else {
             Toast.makeText(this, "Falha ao efetuar Login!", Toast.LENGTH_LONG).show()

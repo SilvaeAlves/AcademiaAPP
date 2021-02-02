@@ -1,26 +1,22 @@
 package com.br.djbentosh.academia
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.squareup.picasso.Picasso
 
 class UsuariosAdapter(
     private val mContext: Context,
-    private var listaUsuarios: List<GetUsuarioResponse>
+    private var listaUsuarios: MutableList<GetUsuario>
 ) :
     BaseAdapter() {
     private val inflater: LayoutInflater =
         mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-    //@SuppressLint("ViewHolder")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val listView = inflater.inflate(R.layout.tela_usuario, parent, false)
 
@@ -32,11 +28,11 @@ class UsuariosAdapter(
         val txtUsuTitle = listView.findViewById<TextView>(R.id.title1)
         txtUsuTitle.text = item.title
 
-        val txtUsuEmail = listView.findViewById<TextView>(R.id.email1)
-        txtUsuEmail.text = item.name
+        val txtUsuName = listView.findViewById<TextView>(R.id.email1)
+        txtUsuName.text = item.name
 
-        val txtUsuSenha = listView.findViewById<TextView>(R.id.senha1)
-        txtUsuSenha.text = item.location
+        val txtUsuLocation = listView.findViewById<TextView>(R.id.senha1)
+        txtUsuLocation.text = item.location
 
         val imgUsuList = listView.findViewById<ImageView>(R.id.imagemUsuario1)
         Picasso.get().load(item.image).into(imgUsuList)
@@ -44,7 +40,7 @@ class UsuariosAdapter(
         return listView
     }
 
-    override fun getItem(position: Int): GetUsuarioResponse? {
+    override fun getItem(position: Int): GetUsuario? {
         return listaUsuarios[position]
     }
 
@@ -56,9 +52,11 @@ class UsuariosAdapter(
         return listaUsuarios.size
     }
 
-    fun updateusuarios(usuarios: List<GetUsuarioResponse>) {
-        //     this.listaUsuarios.addAll(usuarios)
-        notifyDataSetChanged()
+    fun removeUsuario(removeUsuario: GetUsuario){
+        listaUsuarios.remove(removeUsuario)
+    }
 
+    fun alteraUsuario (alteraUsuario: GetUsuario){
+        listaUsuarios.add(alteraUsuario)
     }
 }
